@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-
-DmvFest::CLI.new.call 
+require './lib/dmv_fest'
+DmvFest::CLI.new.call
