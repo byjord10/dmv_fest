@@ -11,4 +11,5 @@ require "dmv_fest"
 # Pry.start
 
 require "irb"
-IRB.start(__FILE__)
+IRB.start
+# IRB.start(__FILE__)
