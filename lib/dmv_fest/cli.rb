@@ -11,12 +11,13 @@ class DmvFest::CLI
 
   def festival_list
     puts "Here is a list of music festivals in the DMV."
-    puts <<-DOC.gsub /^\s*/,''
-      1. Capital Jazz Fest
-      2. Broccoli City Fest
-      3. Something in the Water
-      4. Moonrise Fest
-    DOC
+    # puts <<-DOC.gsub /^\s*/,''
+    #   1. Capital Jazz Fest
+    #   2. Broccoli City Fest
+    #   3. Something in the Water
+    #   4. Moonrise Fest
+    # DOC
+    @events = DmvFest::Events.this_year
   end
 
   def festival_selection
