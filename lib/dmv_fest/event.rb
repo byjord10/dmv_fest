@@ -8,7 +8,7 @@ class DmvFest::Event
       3. Something in the Water
       4. Moonrise Fest
     DOC
-    
+  
     event_1 = self.new
     event_1.name = "Capital Jazz Fest"
     event_1.price = "$"
