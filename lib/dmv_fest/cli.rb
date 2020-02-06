@@ -17,7 +17,7 @@ class DmvFest::CLI
     #   3. Something in the Water
     #   4. Moonrise Fest
     # DOC
-    @events = DmvFest::Events.this_year
+    @events = DmvFest::Event.festival_list
   end
 
   def festival_selection
@@ -32,6 +32,10 @@ class DmvFest::CLI
       # price_selection
     when "2"
       puts "DaBaby, Roddy Ricch, Megan Thee Stallion, Burna Boy, Ari Lennox, Doja Cat, Lucky Daye, IDK, Soulection: Andre Power, Esta, Sasha Marie and Special Guest "
+    when "3"
+      puts "Coming Soon"
+    when "4"
+      puts "Coming Soon"
     when "festivals"
       festival_list
     else
@@ -40,6 +44,7 @@ class DmvFest::CLI
   end
 
   def goodbye
+    input = "exit"
     puts "Thanks for using DMV Fest!"
     puts "Get updates on ticket prices and the line ups by signing up to our email list"
   end
