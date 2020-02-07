@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
 require './lib/dmv_fest.rb'
 
+
 DmvFest::CLI.new.call

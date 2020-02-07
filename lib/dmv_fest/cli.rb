@@ -1,5 +1,3 @@
-#Our CLI Controller
-
 class DmvFest::CLI
 
   def call
@@ -17,7 +15,7 @@ class DmvFest::CLI
     #   3. Something in the Water
     #   4. Moonrise Fest
     # DOC
-    @events = DmvFest::Event.festival_list
+    @events = DmvFest::Event.year
   end
 
   def festival_selection
