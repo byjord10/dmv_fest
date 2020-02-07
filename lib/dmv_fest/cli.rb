@@ -16,25 +16,21 @@ class DmvFest::CLI
     #   4. Moonrise Fest
     # DOC
     @events = DmvFest::Event.year
+    @events.each.with_index(1) do |event, i|
+      puts "#{i}. #{event.name} - #{event.price} - #{event.line_up}"
+    end
   end
 
   def festival_selection
     input = nil
     while input != "exit"
-    puts "Select a number assigned to the festival of your choice to see the line up."
-    puts "Type festivals to see the list again or type exit and we'll catch ya next time."
-    input = gets.strip
-    case input
-    when "1"
-      puts "The talent lineup for the 2020 festival will be announced in spring 2020. Stay tuned."
-      # price_selection
-    when "2"
-      puts "DaBaby, Roddy Ricch, Megan Thee Stallion, Burna Boy, Ari Lennox, Doja Cat, Lucky Daye, IDK, Soulection: Andre Power, Esta, Sasha Marie and Special Guest "
-    when "3"
-      puts "Coming Soon"
-    when "4"
-      puts "Coming Soon"
-    when "festivals"
+      puts "Select a number assigned to the festival of your choice to see the line up."
+      puts "Type festivals to see the list again or type exit and we'll catch ya next time."
+      input = gets.strip.downcase
+    if input.to_i > 0
+      the_event = @events[input.to_i-1]
+      puts "#{the_event.name} - #{the_event.price} - #{the_event.line_up}"
+    elsif input == "festivals"
       festival_list
     else
       puts "Unknown selection, please select 1-4"

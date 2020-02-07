@@ -1,3 +1,4 @@
+
 class DmvFest::Event
   attr_accessor :name, :price, :line_up, :url
 

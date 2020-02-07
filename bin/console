@@ -11,5 +11,5 @@ require "bundler/setup"
 # Pry.start
 
 require "irb"
-IRB.start
-# IRB.start(__FILE__)
+# IRB.start
+IRB.start(__FILE__)
