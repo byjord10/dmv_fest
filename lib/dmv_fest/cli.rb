@@ -3,21 +3,16 @@ class DmvFest::CLI
   def call
     festival_list
     festival_selection
-    # price_selection
     goodbye
   end
 
   def festival_list
     puts "Here is a list of music festivals in the DMV."
-    # puts <<-DOC.gsub /^\s*/,''
-    #   1. Capital Jazz Fest
-    #   2. Broccoli City Fest
-    #   3. Something in the Water
-    #   4. Moonrise Fest
-    # DOC
+
     @events = DmvFest::Event.year
     @events.each.with_index(1) do |event, i|
-      puts "#{i}. #{event.name} - #{event.price} - #{event.line_up}"
+      puts "#{i}. #{event.name} - #{event.price}"
+      puts "#{i}. #{event.line_up.}"
     end
   end
 
@@ -41,6 +36,6 @@ class DmvFest::CLI
     input = "exit"
     puts "Thanks for using DMV Fest!"
     puts "Get updates on ticket prices and the line ups by signing up to our email list"
-  end
-end
-end
+  end 
+
+end 
