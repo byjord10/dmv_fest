@@ -10,7 +10,7 @@ class DmvFest::CLI
     puts "Here is a list of music festivals in the DMV."
     @events = DmvFest::Event.year
     @events.each.with_index(1) do |event, i|
-    puts "#{i}. #{event.name} - #{event.price} - #{event.line_up.} "
+    puts "#{i}. #{event.name} - #{event.price} - #{event.line_up} "
     end
   end
 
@@ -35,5 +35,4 @@ class DmvFest::CLI
     puts " Thanks for using DMV Fest!"
     puts " Get updates on ticket prices and the line ups by signing up to our email list "
   end
-end 
 end
