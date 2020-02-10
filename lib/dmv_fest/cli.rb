@@ -14,14 +14,14 @@ class DmvFest::CLI
       puts " #{event.price}"
       puts "Line up: #{event.line_up} "
     end
-
   end
 
   def festival_selection
     input = nil
-    if input != "exit"
+    while input != "exit"
       puts " Select a number assigned to the festival of your choice to see the line up. Type festivals to see the list again or type exit and we'll catch ya next time."
       input = gets.strip.downcase
+      
       if input.to_i > 0
         the_event = @events[input.to_i-1]
         puts " #{the_event.name}"
