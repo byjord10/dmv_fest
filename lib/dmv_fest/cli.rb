@@ -11,7 +11,6 @@ class DmvFest::CLI
     @events = DmvFest::Event.year
     @events.each.with_index(1) do |event, i|
     puts "#{i}. #{event.name} - #{event.price} - #{event.line_up} "
-    end
   end
 
   def festival_selection
@@ -21,10 +20,13 @@ class DmvFest::CLI
       input = gets.strip.downcase
       if input.to_i > 0
         the_event = @events[input.to_i-1]
-        puts " #{the_event.name} - #{the_event.price} - #{the_event.line_up} "
+        puts " #{the_event.name}"
+        puts " #{the_event.price}"
+        puts "Line up: #{the_event.line_up} "
       elsif input == "festivals"
         festival_list
       else
+        input != "1,2,3,4"
         puts " Unknown selection, please select 1-4 "
       end
     end
@@ -35,4 +37,6 @@ class DmvFest::CLI
     puts " Thanks for using DMV Fest!"
     puts " Get updates on ticket prices and the line ups by signing up to our email list "
   end
+end 
+
 end
