@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "dmv_fest"
+# require "dmv_fest"
 
 
 # You can add fixtures and/or initialization code here to make experimenting
@@ -12,5 +12,4 @@ require "dmv_fest"
 # Pry.start
 
 require "irb"
-# IRB.start
-IRB.start(__FILE__)
+IRB.start
