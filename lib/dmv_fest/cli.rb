@@ -29,7 +29,7 @@ class DmvFest::CLI
         puts "Line up: #{the_event.line_up} "
       elsif input == "festivals"
         festival_list
-      elsif input.between?(5,100)
+      elsif input.between?(5,100) 
         puts " Unknown selection, please select 1-4 "
       end
     end

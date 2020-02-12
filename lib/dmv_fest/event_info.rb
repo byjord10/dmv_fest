@@ -8,7 +8,6 @@ module EventInfo
     @url = url
   end
 
-
   def event_1(event)
     doc = Nokogiri::HTML(open("https://www.capitaljazz.com/fest/2020/talent.php"))
 
