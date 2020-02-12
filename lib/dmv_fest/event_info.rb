@@ -1,4 +1,4 @@
-module Event_info
+module EventInfo
 
   def self.scrape_event_1(event_1)
 
