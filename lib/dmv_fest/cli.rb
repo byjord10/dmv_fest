@@ -21,7 +21,7 @@ class DmvFest::CLI
     while input != "exit"
       puts " Select a number assigned to the festival of your choice to see the line up. Type festivals to see the list again or type exit and we'll catch ya next time."
       input = gets.strip.downcase
-      
+
       if input.to_i > 0
         the_event = @events[input.to_i-1]
         puts " #{the_event.name}"
@@ -29,8 +29,7 @@ class DmvFest::CLI
         puts "Line up: #{the_event.line_up} "
       elsif input == "festivals"
         festival_list
-      else
-        input != "1,2,3,4"
+      elsif input.between?(5,100 || != i)
         puts " Unknown selection, please select 1-4 "
       end
     end

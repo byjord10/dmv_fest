@@ -1,22 +1,19 @@
 require 'pry'
-
+binding.pry
 class DmvFest::Event
-  attr_accessor :name, :price, :line_up, :url
+  # attr_accessor :name, :price, :line_up, :url
   include EventInfo
 
   @@all = []
 
-  binding.pry
-
-  def initialize(name, price, line_up, url)
-    @name = name
-    @price = price
-    @line_up = line_up
-    @url = url
-    @@all << self
-  end
-
-
+  # def initialize(name, price, line_up, url)
+  #   @name = name
+  #   @price = price
+  #   @line_up = line_up
+  #   @url = url
+  #   @@all << self
+  # end
+  
   def self.all
     @@all
   end
