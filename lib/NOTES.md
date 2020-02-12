@@ -99,3 +99,9 @@ def self.festival_name(name)
     festival.name == name
   end
 end
+
+
+
+
+________ Resource notes ________
+-change "string" to %|string| to make code look better
