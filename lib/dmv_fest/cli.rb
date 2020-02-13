@@ -1,6 +1,7 @@
 class DmvFest::CLI
 
-  def call
+
+  def festivals
     festival_list
     festival_selection
     goodbye
@@ -8,8 +9,8 @@ class DmvFest::CLI
 
   def festival_list
     puts "Here is a list of music festivals in the DMV."
-    events = DmvFest::Event.scrape_event
-    events.each.with_index(1) do |event, i|
+    events = DmvFest::Event.scrape_event_by_name
+    events.each do |event, i|
       puts " #{event.name}"
     end
   end

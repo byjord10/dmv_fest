@@ -1,8 +1,9 @@
-class DmvFest::ScrapeEvent
+class DmvFest::ScrapeEvent < Event
 
 
     def scrape_event = {
-      "Charm City Bluegrass Festival" => {
+
+    "Charm City Bluegrass Festival" => {
 
       doc = Nokogiri::HTML(open("https://www.musicfestivalwizard.com/festivals/charm-city-bluegrass-festival-2020/"))
 
@@ -15,14 +16,14 @@ class DmvFest::ScrapeEvent
     },
     "Something In The Water" => {
 
-      doc = Nokogiri::HTML(open("https://www.musicfestivalwizard.com/festivals/something-in-the-water-festival-2020/"))
+      doc = Nokogiri::HTML(open("https://somethinginthewater.frontgatetickets.com/"))
 
-      event.name = doc.search("entry-title search-title").text.strip
-      event.location = doc.search("search-meta").text
-      event.ticket_type = doc.search("ticket-type").text
-      event.ticket_price = doc.search("ticket-price").text
+      event.name = doc.search("header-image").text.strip
+      event.location = doc.search("location").text
+      event.ticket_type = doc.search("omnibox__listing__section").text
+      event.ticket_price = doc.search("event-price col-xs-12 nopadding").text
       event.line_up = doc.search("").text
-      event.url = " "
+      event.url = "https://seatgeek.com/something-in-the-water-festival-tickets "
     },
 
     "" => {

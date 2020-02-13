@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
+require "./lib/enviornment"
 
 
 
@@ -12,4 +13,4 @@ require "bundler/setup"
 # Pry.start
 
 require "irb"
-IRB.start
+IRB.start(__FILE__)

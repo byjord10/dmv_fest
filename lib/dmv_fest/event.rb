@@ -20,7 +20,7 @@ class DmvFest::Event
       @@all
     end
 
-    def self.scrape_event_by_name(name)
+    def self.scrape_event_by_name
       self.all.detect do |event|
         event.name == name
       end

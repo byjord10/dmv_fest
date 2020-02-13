@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
+
 require './lib/dmv_fest.rb'
-# require_relative './config/enviornment.rb'
 
-
-
-
-DmvFest::CLI.new.call
+DmvFest::CLI.new.festivals
