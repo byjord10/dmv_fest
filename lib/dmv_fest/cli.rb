@@ -8,11 +8,9 @@ class DmvFest::CLI
 
   def festival_list
     puts "Here is a list of music festivals in the DMV."
-    @events = DmvFest::Event.year
-    @events.each.with_index(1) do |event, i|
+    events = DmvFest::Event.scrape_event
+    events.each.with_index(1) do |event, i|
       puts " #{event.name}"
-      puts " #{event.price}"
-      puts "Line up: #{event.line_up} "
     end
   end
 
@@ -22,22 +20,26 @@ class DmvFest::CLI
       puts " Select a number assigned to the festival of your choice to see the line up. Type festivals to see the list again or type exit and we'll catch ya next time."
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i.between?(1,4)
         the_event = @events[input.to_i-1]
         puts " #{the_event.name}"
-        puts " #{the_event.price}"
-        puts "Line up: #{the_event.line_up} "
+        puts " #{event.price}"
+        puts "The Scene: #{event.the_scene}"
+        puts "This years line up: #{event.line_up} "
+
       elsif input == "festivals"
         festival_list
-      elsif input.between?(5,100) 
+
+      else
         puts " Unknown selection, please select 1-4 "
+
       end
     end
   end
 
   def goodbye
     input = "exit"
+
     puts " Thanks for using DMV Fest!"
-    puts " Get updates on ticket prices and the line ups by signing up to our email list "
   end
 end

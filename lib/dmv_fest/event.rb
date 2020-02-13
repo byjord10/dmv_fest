@@ -1,46 +1,28 @@
-require 'pry'
-binding.pry
 class DmvFest::Event
-  attr_accessor :name, :price, :line_up, :url
-  include EventInfo
+  attr_accessor :name, :ticket_type, :ticket_price, :line_up, :the_scene, :url
 
-  @@all = []
-
-  def initialize(name, price, line_up, url)
+  def initialize(name, titcket_type, ticket_price, line_up, url)
     @name = name
-    @price = price
+    @ticket_type = ticket_type
+    @ticket_price = ticket_price
     @line_up = line_up
     @url = url
-    @@all << self
   end
 
-  def self.all
-    @@all
-  end
 
-  def self.year
-    self.scrape_event_1
-    self.scrape_event_2
-    self.scrape_event_3
-    self.scrape_event_4
-  end
-
-  def self.scrape_events
-     Event_info << self
-  end
-
-  def event_1(event)
-    doc = Nokogiri::HTML(open("https://www.capitaljazz.com/fest/2020/talent.php"))
+  def self.scrape_event_1
+    doc = Nokogiri::HTML(open("https://www.mt.cm/2020-charm-city-bluegrass-festival"))
+  binding.pry
 
     event = self.new
-    event.name = doc.css("text-center no-space-bottom").text.strip
-    event.price = doc.css("Ticket Info &amp; Prices").text
-    event.line_up = doc.css("text-center").text
-    event.url = doc.csss("capitaljazz.com")
-
+    event.name = doc.search("title").text
+    event.ticket_type = doc.search("ticket-type").text
+    event.ticket_price = doc.search("ticket-price").text
+    event.line_up = doc.search("strong").text
+    event.url = doc.search("https://www.mt.cm/2020-charm-city-bluegrass-festival")
   end
 
-  def event_2(event)
+  def self.scrape_event_2
     doc = Nokogiri::HTML(open())
 
     event = self.new
@@ -51,7 +33,7 @@ class DmvFest::Event
 
   end
 
-  def event_3(event)
+  def self.scrape_event_3
     doc = Nokogiri::HTML(open())
 
     event = self.new
@@ -62,7 +44,7 @@ class DmvFest::Event
 
   end
 
-  def event_4(event)
+  def self.scrape_event_4
     doc = Nokogiri::HTML(open())
 
     event = self.new
@@ -70,6 +52,6 @@ class DmvFest::Event
     event.price = doc.search(" ").text
     event.line_up = doc.search("").text
     event.url = " "
-  end 
+  end
 
 end
