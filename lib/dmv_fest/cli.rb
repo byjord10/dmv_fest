@@ -16,9 +16,9 @@ class DmvFest::CLI
 
   def festival_selection
     input = nil
-    while input != "exit"
-      puts " Select a number assigned to the festival of your choice to see the line up. Type festivals to see the list again or type exit and we'll catch ya next time."
-      input = gets.strip.downcase
+    while input != "exit" #see if you could do without this line
+      puts " Select a number assigned to the festival of your choice to see the line up. Type 0 to see the list again or type exit and we'll catch ya next time."
+      input = gets.strip
 
       if input.to_i.between?(1,4)
         the_event = @events[input.to_i-1]
@@ -27,7 +27,7 @@ class DmvFest::CLI
         puts "The Scene: #{event.the_scene}"
         puts "This years line up: #{event.line_up} "
 
-      elsif input == "festivals"
+      elsif input == "0"
         festival_list
 
       else
