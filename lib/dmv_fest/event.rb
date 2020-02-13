@@ -1,8 +1,10 @@
 class DmvFest::Event
-  attr_accessor :name, :ticket_type, :ticket_price, :line_up, :the_scene, :url
+  attr_accessor :name, :location, :date, :ticket_type, :ticket_price, :line_up, :url
 
-  def initialize(name, ticket_type, ticket_price, line_up, url)
+  def initialize(name, location, date, ticket_type, ticket_price, line_up, url)
     @name = name
+    @location = location
+    @date = date
     @ticket_type = ticket_type
     @ticket_price = ticket_price
     @line_up = line_up
@@ -10,5 +12,6 @@ class DmvFest::Event
   end
 
 
-  
+
+
 end
