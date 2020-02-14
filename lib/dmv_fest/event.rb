@@ -3,15 +3,17 @@ class DmvFest::Event
 
   @@name = []
 
-
-  def initialize(attributes)
+  def initialize(attributes=nil)
     attributes.each {|key, value|
       begin
         self.send(("#{key}="), value)
-        @@name << name
+        @@name << self
       end
       }
+      @@name << self
+      @event = []
     end
+  end
 
     def self.all
     @@name
@@ -19,6 +21,10 @@ class DmvFest::Event
 
     def save
       @@name << self
+    end
+
+    def event=(event)
+      @event = event
     end
 
     def self.scrape_event_by_name
@@ -29,5 +35,8 @@ class DmvFest::Event
 
     def self.find_by_name(name)
       @@name.find {|event| event.name == name }
-    end
-  end 
+    end #See if app would function without this method
+
+    def to_param
+      name.downcase
+    end #See if app would function witout this method
