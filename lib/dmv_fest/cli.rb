@@ -10,7 +10,7 @@ class DmvFest::CLI
   def event_list
     # binding.pry
     puts "Here is a list of music festivals in the DMV."
-    @event = DmvFest::Event.new.scrape_event_by_name
+    @event = DmvFest::Event.new scrape_event_by_name
     event(@name) do |event|
       event.split(" ").first
       puts "#{event.name}"
