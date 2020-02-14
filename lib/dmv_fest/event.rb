@@ -29,4 +29,5 @@ class DmvFest::Event
 
     def self.find_by_name(name)
       @@name.find {|event| event.name == name }
-  end
+    end
+  end 

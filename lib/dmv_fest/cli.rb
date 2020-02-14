@@ -8,11 +8,12 @@ class DmvFest::CLI
   end
 
   def event_list
-    binding.pry
+    # binding.pry
     puts "Here is a list of music festivals in the DMV."
     @event = DmvFest::Event.scrape_event_by_name
-    @event.each do |event, i|
-      puts "#{i}. #{event.name}"
+    event(@@name) do |event|
+      event.split(" ").first
+      puts "#{event.name}"
     end
   end
 
