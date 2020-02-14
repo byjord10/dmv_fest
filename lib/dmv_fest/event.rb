@@ -12,17 +12,17 @@ class DmvFest::Event
       }
     end
 
-    def name
-      @name
+    def event_list
+      @event
     end
 
     def self.all
-      @@all
+       @@all << scrape_event_by_all
     end
 
     def self.scrape_event_by_name
       self.all.detect do |event|
-        event.name == name
+        @event.name == name
       end
     end
 

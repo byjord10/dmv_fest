@@ -1,7 +1,7 @@
 class DmvFest::ScrapeEvent < Event
 
 
-    def scrape_event = {
+    def event_list = {
 
     "Charm City Bluegrass Festival" => {
 

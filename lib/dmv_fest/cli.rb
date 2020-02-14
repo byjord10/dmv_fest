@@ -2,15 +2,16 @@ class DmvFest::CLI
 
 
   def festivals
-    festival_list
+    event_list
     festival_selection
     goodbye
   end
 
-  def festival_list
+  def event_list
+    binding.pry
     puts "Here is a list of music festivals in the DMV."
-    events = DmvFest::Event.scrape_event_by_name
-    events.each do |event, i|
+    @event = DmvFest::Event.scrape_event_by_name
+    @event.each do |event, i|
       puts " #{event.name}"
     end
   end
