@@ -12,7 +12,7 @@ class DmvFest::CLI
     puts "Here is a list of music festivals in the DMV."
     @event = DmvFest::Event.scrape_event_by_name
     @event.each do |event, i|
-      puts " #{event.name}"
+      puts "#{i}. #{event.name}"
     end
   end
 

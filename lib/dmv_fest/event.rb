@@ -1,29 +1,32 @@
 class DmvFest::Event
   attr_accessor :name, :location, :date, :ticket_type, :ticket_price, :line_up, :url
 
-  @@all = []
+  @@name = []
+
 
   def initialize(attributes)
     attributes.each {|key, value|
       begin
         self.send(("#{key}="), value)
-        @@all << self
+        @@name << name
       end
       }
     end
 
-    def event_list
-      @event
+    def self.all
+    @@name
     end
 
-    def self.all
-       @@all << scrape_event_by_all
+    def save
+      @@name << self
     end
 
     def self.scrape_event_by_name
       self.all.detect do |event|
-        @event.name == name
+        @@name == name
       end
     end
 
+    def self.find_by_name(name)
+      @@name.find {|event| event.name == name }
   end
