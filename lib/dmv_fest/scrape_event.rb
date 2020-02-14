@@ -1,4 +1,12 @@
+require 'HTTParty'
+require 'Nokogiri'
+
 class DmvFest::ScrapeEvent
+
+  attr_accessor :parse_page
+
+  def initialize
+    doc = HTTParty.get("")
 
 
     def scrape_event_by_name = {
