@@ -1,19 +1,19 @@
 require 'open-uri'
 require 'nokogiri'
-require 'byebug'
+require 'pry'
 
 require_relative './event.rb'
 
 class Scraper
+  byebug
 
   def get_page
-    Nokogiri::HTML(open(" "))
+    Nokogiri::HTML(open(" http://metromontage.com/list-of-music-festivals-in-d-c-maryland-and-northern-virginia/ "))
   end
 
   def get_events
     self.get_page.css(".post")
   end
-byebug
   def make_list
     self.get_events do |post|
       event = Event.new

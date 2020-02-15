@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "./lib/enviornment"
+require "./lib/dmv_fest/scrape_event.rb"
 
 
 

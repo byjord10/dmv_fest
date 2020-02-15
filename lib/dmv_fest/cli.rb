@@ -34,22 +34,26 @@ class DmvFest::CLI
 
       if input.to_i > 0
         the_event = @events[input.to_i-1]
-        puts " #{the_event.name}"
-        puts " #{event.price}"
-        puts "The Scene: #{event.the_scene}"
-        puts "This years line up: #{event.line_up} "
+            Event.all.each do |event|
+              # if event.name && event.name != ""
+                puts "Festival: #{event.name}"
+                puts "Location and Date: #{event.location} - #{event.date}"
+                puts "Line Up: #{event.line_up}"
+            end
+          end
 
-      elsif input == "0"
+      if input == "0"
         festival_list
 
       else
         puts " Unknown input. Type 0 to see the list again or exit."
       end
     end
-  end
+
 
   def goodbye
     input = "exit"
 
     puts " Thanks for using DMV Fest!"
   end
+end 
