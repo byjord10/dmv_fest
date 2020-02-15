@@ -146,6 +146,17 @@ ___________ scrape info ___________
 #   event.url = " "
 # end
 
+_____________ scraper____
+
+      # doc = Nokogiri::HTML(open(" "))
+      #
+      # event.name = doc.search("").text
+      # event.location = doc.search("").text
+      # event.ticket_type = doc.search("").text
+      # event.ticket_price = doc.search("").text
+      # event.line_up = doc.search("").text
+      # event.url = doc.search("")
+
 
 
 

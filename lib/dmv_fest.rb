@@ -1,7 +1,11 @@
 require_relative './dmv_fest/version'
 require_relative './dmv_fest/cli'
 require_relative './dmv_fest/event'
+require_relative './scrape_event'
+require_relative './api'
 
+require 'httparty'
+require 'byebug'
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
+# require 'pry'
