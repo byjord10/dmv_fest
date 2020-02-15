@@ -7,4 +7,4 @@ require_relative './dmv_fest/cli'
 require_relative './dmv_fest/event'
 require_relative './dmv_fest/scrape_event'
 
-# require 'pry'
+require 'pry'

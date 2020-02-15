@@ -1,15 +1,37 @@
-require 'httparty'
+require 'open-uri'
 require 'nokogiri'
 require 'byebug'
 
+require_relative './event.rb'
 
-  def scrape_event
+class Scraper
 
-    url = " http://metromontage.com/list-of-music-festivals-in-d-c-maryland-and-northern-virginia/ "
-    unparsed_page = HTTParty.get(url)
-    parsed_page = Nokogiri::HTML(unparsed_page)
-    byebug
-
+  def get_page
+    Nokogiri::HTML(open(" "))
   end
 
-  scraper
+  def get_events
+    self.get_page.css(".post")
+  end
+byebug
+  def make_list
+    self.get_events do |post|
+      event = Event.new
+      event.name = post.css(" ").text
+      event.date = post.css(" ").text
+      event.location = post.css(" ").text
+      event.line_up = post.css(" ").text
+    end
+  end
+
+  def print_courses
+    self.make_list
+    Event.all.each do |event|
+      if event.name && event.name != ""
+        puts "Festival: #{event.name}"
+        puts "Location and Date: #{event.location} - #{event.date}"
+        puts "Line Up: #{event.line_up}"
+      end
+    end
+  end
+end

@@ -1,5 +1,5 @@
 class DmvFest::CLI
-  attr_accessor :event
+  attr_accessor :events
 
 
   def festivals
@@ -10,11 +10,19 @@ class DmvFest::CLI
   end
 
   def event_list
-    event = DmvFest::Event.scrape_event_by_name
-    event.each do |event|
-      event.split(" ").first
-      puts "#{event.name}"
+    @events = DmvFest::Event.get_event_by_name
+    @events.each do |event, i|
+    puts "#{i}. #{event.name} - #{event.price} - #{event.line_up} "
     end
+  end
+
+
+
+    # event = DmvFest::Event.scrape_event_by_name
+    # event.each do |event|
+    #   event.split(" ").first
+    #   puts "#{event.name}"
+    # end
   end
 
   def festival_selection
@@ -24,7 +32,7 @@ class DmvFest::CLI
       puts " Select a number assigned to the festival of your choice to see the line up. Type 0 to see the list again or type exit and we'll catch ya next time."
       input = gets.strip
 
-      if input.to_i.between?(1,4)
+      if input.to_i > 0
         the_event = @events[input.to_i-1]
         puts " #{the_event.name}"
         puts " #{event.price}"
@@ -35,8 +43,7 @@ class DmvFest::CLI
         festival_list
 
       else
-        puts " Unknown selection, please select 1-4 "
-
+        puts " Unknown input. Type 0 to see the list again or exit."
       end
     end
   end
@@ -46,4 +53,3 @@ class DmvFest::CLI
 
     puts " Thanks for using DMV Fest!"
   end
-end
