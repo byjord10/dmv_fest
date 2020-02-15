@@ -6,5 +6,6 @@ gem 'pry'
 gem 'nokogiri'
 gem 'rake'
 gem 'require_all'
+gem 'httparty'
 
 gem "byebug", "~> 11.1", :groups => [:development, :test]

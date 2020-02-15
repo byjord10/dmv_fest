@@ -1,22 +1,13 @@
 class DmvFest::Event
-  attr_accessor :name
-  attr_reader :location, :date, :line_up, :url
-  #
-  # ATTRIBUTES = [
-  #   "name:",
-  #   "location:",
-  #   "date:",
-  #   "ticket_type:",
-  #   "ticket_price:",
-  #   "line_up:",
-  #   "url:"
-  # ]
+  attr_accessor :name, :location, :date, :line_up, :url
 
   @@name = []
 
   def initialize(attributes)
     attributes.each  {|key, value| self.send(("#{key}="), value)}
     @@name << self
+  rescue NoMethodError
+
   end
 
   def self.all
@@ -27,9 +18,17 @@ class DmvFest::Event
     @@name << self
   end
 
-  # def event=(event)
-  #   @event = event
-  # end
+  def location
+    @location
+  end
+
+  def date
+    @date
+  end
+
+  def line_up
+    @line_up
+  end
 
   def self.scrape_event_by_name(name)
     @@name.detect {|event| event.name == name}
