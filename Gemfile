@@ -6,4 +6,4 @@ gem 'pry'
 
 gem 'httparty'
 
-gem "byebug", "~> 11.1", :groups => [:development, :test]
+# gem "byebug", "~> 11.1", :groups => [:development, :test]

@@ -17,14 +17,6 @@ class DmvFest::CLI
   end
 
 
-
-    # event = DmvFest::Event.scrape_event_by_name
-    # event.each do |event|
-    #   event.split(" ").first
-    #   puts "#{event.name}"
-    # end
-  end
-
   def festival_selection
 
     input = nil
@@ -56,4 +48,5 @@ class DmvFest::CLI
 
     puts " Thanks for using DMV Fest!"
   end
+end
 end 

@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    byebug (11.1.1)
     coderay (1.1.2)
     httparty (0.17.3)
       mime-types (~> 3.0)
@@ -19,7 +18,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug (~> 11.1)
   httparty
   pry
 

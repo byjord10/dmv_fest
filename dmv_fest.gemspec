@@ -42,5 +42,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
 
   spec_add_dependency "nokogiri"
+  spec_add_dependency "httparty"
 
 end
