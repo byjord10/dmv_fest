@@ -1,7 +1,7 @@
-# require 'byebug'
+require 'pry'
 require 'nokogiri'
 require 'httparty'
-require_relative './lib/dmv_fest.rb'
+
 
 class Scraper
 
@@ -14,6 +14,8 @@ event_list_url = (BASE_PATH + "/list-of-music-festivals-in-d-c-maryland-and-nort
     doc = HTTParty.get(event_list_url)
     index = Nokogiri::HTML(doc)
     scraped_events = index.css("")
-    scraped_events.collect do |event_
+    scraped_events.collect do |event|
+      binding.pry
   end
 end
+end 
