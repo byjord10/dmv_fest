@@ -2,6 +2,7 @@
 
 require "bundler/setup"
 require "./lib/dmv_fest/scrape_event.rb"
+require './config/environment.rb'
 
 
 

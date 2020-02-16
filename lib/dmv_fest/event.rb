@@ -1,3 +1,4 @@
+
 class DmvFest::Event
 
   attr_accessor :name, :location, :date, :line_up, :url
@@ -15,7 +16,7 @@ class DmvFest::Event
 
   def self.create_from_array(event_array)
     event_array.each { |attributes| self.new(attributes)}
-  end 
+  end
 
   def self.get_event_by_name
     @@events.detect {|event| event.name == name}

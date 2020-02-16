@@ -1,4 +1,3 @@
-require_relative "../config/environment.rb"
 
 class DmvFest::CLI
   BASE_PATH = "http://metromontage.com"
