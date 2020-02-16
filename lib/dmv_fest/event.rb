@@ -2,32 +2,23 @@ class DmvFest::Event
 
   attr_accessor :name, :location, :date, :line_up, :url
 
-  @@name = []
+  @@events = []
 
   def initialize(attributes)
-    attributes.each  {|key, value| self.send(("#{key}="), value)}
-    @@name << self
-    @event = []
+    attributes.each  {|key, value| self.send(("#{key}="), ("#{value}"))}
+    @@events << self
   end
 
   def self.all
-    @@name
+    @@events
   end
 
-  def location
-    @location
-  end
-
-  def date
-    @date
-  end
-
-  def line_up
-    @line_up
-  end
+  def self.create_from_array(event_array)
+    event_array.each { |attributes| self.new(attributes)}
+  end 
 
   def self.get_event_by_name
-    @@name.detect {|event| event.name == name}
+    @@events.detect {|event| event.name == name}
   end
 
 end

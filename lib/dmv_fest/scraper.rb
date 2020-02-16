@@ -1,16 +1,23 @@
-require 'open-uri'
+# require 'byebug'
 require 'nokogiri'
 require 'httparty'
-require 'pry'
-
-require_relative './event.rb'
+# require_relative './dmv_fest.rb'
 
 class Scraper
 
-    doc = Nokogiri::HTML(open(" http://metromontage.com/list-of-music-festivals-in-d-c-maryland-and-northern-virginia/ "))
-    binding.pry
+attr_accessor :event_list_url
+BASE_PATH = "http://metromontage.com"
+event_list_url = (BASE_PATH + "/list-of-music-festivals-in-d-c-maryland-and-northern-virginia/")
 
 
+  def self.scrape_events(event_list_url)
+    doc = HTTParty.get(event_list_url)
+    index = Nokogiri::HTML(doc)
+    scraped_events = index.css("")
+  end
+end
+
+  #
   # def get_events
   #   self.get_page.css(".post")
   # end
@@ -35,4 +42,3 @@ class Scraper
   #     end
   #   end
   # end
-end

@@ -3,4 +3,4 @@
 require './lib/dmv_fest.rb'
 
 
-DmvFest::CLI.new.festivals
+DmvFest::CLI.dmv-fest

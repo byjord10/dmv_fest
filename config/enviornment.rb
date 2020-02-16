@@ -9,3 +9,8 @@ require_relative './dmv_fest/event'
 require_relative './dmv_fest/scrape_event'
 
 require 'pry'
+
+module Event
+  class Error < StandardError; end
+
+end

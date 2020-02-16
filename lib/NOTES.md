@@ -73,6 +73,12 @@ def goodbye
   puts " Get updates on ticket prices and the line ups by signing up to our email list "
 end
 
+
+
+__ @events = DmvFest::Event.get_event_by_name
+@events.each do |event, i|
+puts "#{i}. #{event.name} "
+
 ________
 attr_accessor :name, :price, :line_up, :url
 
