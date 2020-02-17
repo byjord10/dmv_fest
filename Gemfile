@@ -1,10 +1,6 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in dmv_fest.gemspec
+# Specify your gem's dependencies in brianna_project.gemspec
 # gemspec
-gem 'pry'
-gem 'nokogiri'
 
-gem 'httparty'
-
-# gem "byebug", "~> 11.1", :groups => [:development, :test]
+gem "rake", "~> 12.0"

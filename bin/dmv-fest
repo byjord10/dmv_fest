@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative './lib/dmv_fest.rb'
-
-
-DmvFest::CLI.greeting
